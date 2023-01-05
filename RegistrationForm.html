@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Registration Form</title>
+      <script src="./register.js"></script>
+      <!--  -->
+<style>
+ .Errormessage{
+   color: red;
+  }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  
+}
+
+.container h1 {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 20px;
+  font-weight: 100;
+}
+
+.registartion-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  color: black;
+  font-size: 19px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 50;
+  padding: 20px;
+  border:2px solid black;
+}
+.registartion-form select{
+    padding: 5px;
+    border:2px solid black;
+    margin-top: 10px;
+    width:180px;
+}
+.registartion-form input,{
+  width:300px;
+}
+.registartion-form input,
+.registartion-form select,
+.registartion-form textarea {
+  padding: 5px;
+  border-color: black;
+  margin-top: 10px;
+  font-family:'Times New Roman', Times, serif;
+}
+.registartion-form textarea{
+    width: 220px;
+    height: 80px;
+    border:2px solid black;
+}
+.registartion-form input:focus,
+.registartion-form textarea:focus {
+  box-shadow: 3px 3px 4px black;
+  border-color: black;
+}
+
+.registartion-form .submit {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 20px;
+  color: rgb(22, 17, 17);
+  cursor: pointer;
+}
+</style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Registration Form</h1>
+            <form name="registration" class="registartion-form" onsubmit="return formValidation()">
+              <table>
+                <tr>
+                  <td><label for="name">Name:</label></td>
+                  <td><input type="text" name="name" id="name" placeholder="Enter Your Name" onblur="formValidation()"></td>
+                  <tr>
+                    <td></td>
+                    <td style="color:red; font-size:smaller;" id="nameError"></td>
+                  </tr>
+                </tr>
+                <tr>
+                  <td><label for="email">Email:</label></td>
+                  <td><input type="text" name="email" placeholder="Enter Your Email"  id="email"  onblur="formValidation()"></td>
+                  <tr>
+                    <td></td>
+                    <td style="color:red; font-size:smaller;" id="emailError"></td>
+                  </tr>
+                </tr>
+                
+                <tr>
+                  <td><label for="password">Password:</label></td>
+                  <td><input type="password" name="password" id="password"  placeholder="Enter Your Password" onblur="formValidation()"></td>
+                  <tr>
+                    <td></td>
+                    <td style="color:red; font-size:smaller;" id="pass"></td>
+                  </tr>
+                </tr>
+
+                <tr>
+                  <td><label for="confirmedpassword">Confirmed Password:</label></td>
+                  <td><input type="password" placeholder="Confirmed Password"  name="confirmedpassword" id="confirmedpassword" onblur="formValidation()"></td>
+                  <tr>
+                    <td></td>
+                    <td style="color:red; font-size:smaller;" id="cpass"></td>
+                  </tr>
+                </tr>
+
+                <tr>
+                  <td><label for="gender" id="gender">Gender:</label></td>
+                  <td>Male: <input type="radio" name="Gender" value="male" onblur="formValidation()">
+                    Female: <input type="radio" name="Gender" value="female" onblur="formValidation()">
+                 </td>
+                 <tr>
+                  <td></td>
+                  <td style="color:red; font-size:smaller;" id="gen" onblur="formValidation()"></td>
+                </tr>
+                </tr>
+
+                <tr>
+                  <td><label for="hobbies">Hobbies</label></td>
+                  <td>
+                    <input type="checkbox" id="cricket" name="hobbies" value="cricket" onblur="formValidation()">
+                    <label for="cricket">cricket</label>
+                    <input type="checkbox" id="football" name="hobbies" value="football" onblur="formValidation()">
+                    <label for="football">football</label>
+                    <input type="checkbox" id="tableTanis" name="hobbies" value="tableTanis" onblur="formValidation()">
+                    <label for="tableTanis">TableTanis</label>
+                  </td>
+                  <tr>
+                    <td></td>
+                    <td style="color:red; font-size:smaller;" id="hobError"></td>
+                  </tr>
+                </tr>
+
+                <tr>
+                  <td><label for="City">City</label></td>
+                  <td>
+                    <select name="city" id="cities" onblur="formValidation()">
+                      <option value="">Select Your City</option>
+                      <option value="Mumbai">Mumbai</option>
+                      <option value="Pune">Pune</option>
+                      <option value="Nashik">Nashik</option>
+                    </select>
+                  </td>
+                  <tr>
+                    <td></td>
+                    <td style="color:red; font-size:smaller;" id="city"></td>
+                  </tr>
+                </tr>
+               
+                <tr>
+                  <td><label for="Remark">Remark:</label></td>
+                  <td><textarea name="remark" placeholder="Enter your remark here" id="remark" onblur="formValidation()"></textarea></td>
+                  <tr>
+                    <td></td>
+                    <td style="color:red; font-size:smaller;" id="rem" ></td>
+                  </tr>             
+                </tr>
+
+                <tr>
+                  <td colspan="2"><input type="submit" class="submit" value="Register" onclick="formValidation()"/></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          
+    </body>
+
+</html>
